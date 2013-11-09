@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SoupforTim/SoupforTim.iml" filepath="$PROJECT_DIR$/SoupforTim/SoupforTim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SoupforTim/SoupforTim-SoupforTim.iml" filepath="$PROJECT_DIR$/SoupforTim/SoupforTim-SoupforTim.iml" />
       <module fileurl="file://$PROJECT_DIR$/SoupforTimProject.iml" filepath="$PROJECT_DIR$/SoupforTimProject.iml" />
     </modules>
   </component>
