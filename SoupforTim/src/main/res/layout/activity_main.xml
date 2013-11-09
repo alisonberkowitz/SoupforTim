@@ -19,6 +19,12 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/soup"
+        android:src="@drawable/soup"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/spoon"
         android:src="@drawable/spoon_icon"/>
 

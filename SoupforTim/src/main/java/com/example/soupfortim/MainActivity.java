@@ -30,7 +30,8 @@ public class MainActivity extends Activity {
         Log.d(String.valueOf(ww), "widthuneed");
 
         final RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-
+        final RelativeLayout.LayoutParams sop = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        final ImageView soup = (ImageView) this.findViewById(R.id.soup);
         final ImageView spoon = (ImageView) this.findViewById(R.id.spoon);
         spoon.setImageResource(R.drawable.spoon_icon);
         spoon.setOnTouchListener(new View.OnTouchListener() {
@@ -46,19 +47,29 @@ public class MainActivity extends Activity {
                         Log.d(String.valueOf(x),"were moving");
                         Log.d(String.valueOf(y),"were moving");
 
+                        int h1t = wh/3;
+                        int h2t = wh/3 + wh/3;
+                        int whalf = ww/2;
+
+
 
                         lp.setMargins(x-50 , y-175,0,0);
                         spoon.setLayoutParams(lp);
 
-                        if (150<x-150 && x-150<300 && 400<y-175 && y-175<500 && eat) {
+                        sop.setMargins(whalf, h2t,0,0);
+                        soup.setLayoutParams(sop);
+
+                        if (whalf-25<x-50 && x-50<whalf+25 && h1t-50<y-175 && y-175<h1t+50 && eat) {
                             points = points + 10;
-                            Toast.makeText(getApplicationContext(), "Eat the soup, Tim! Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             eat = false;
                             break;
                         }
 
-                        if (50<x-150 && x-150<100 && 50<y-175 && y-175<100){
+                        //REFILLING SOUP
+                        if (whalf-50<x-50 && x-50<whalf+50 && h2t-50<y-175 && y-175<h2t+50){
                             eat = true;
+                            Toast.makeText(getApplicationContext(), "Eat the soup, Tim!", Toast.LENGTH_SHORT).show();
                         }
                 }
 
