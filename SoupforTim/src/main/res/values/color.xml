@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey">#666666</color>
+    <color name="sublime">#272822</color>
+    <color name="light">#ddd</color>
+    <color name="white">#eee</color>
+    <color name="dark_red">#CC0000</color>
+</resources>
