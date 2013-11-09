@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
                         spoon.setLayoutParams(lp);
 
                         //when cursor position is in the area of tims mouth we get 10 points
-                        if (whalf+100<cursorx && cursorx<whalf+200 && mouthy-50<cursory && cursory<mouthy+50 && eat) {
+                        if (whalf+120<cursorx && cursorx<whalf+200 && mouthy-50<cursory && cursory<mouthy+50 && eat) {
                             points = points + 10;
                             Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             Log.d((String.valueOf(whalf+100) + " to " + String.valueOf(whalf+200)),"the soup box");
