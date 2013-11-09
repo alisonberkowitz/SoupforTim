@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
     int wh;
     int ww;
     int points = 0;
+    boolean eat = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +50,15 @@ public class MainActivity extends Activity {
                         lp.setMargins(x-50 , y-175,0,0);
                         spoon.setLayoutParams(lp);
 
-                        if (150<x-150 && x-150<300 && 400<y-175 && y-175<500) {
+                        if (150<x-150 && x-150<300 && 400<y-175 && y-175<500 && eat) {
                             points = points + 10;
                             Toast.makeText(getApplicationContext(), "Eat the soup, Tim! Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
-                            lp.setMargins(10,10,0,0);
+                            eat = false;
+                            break;
+                        }
+
+                        if (50<x-150 && x-150<100 && 50<y-175 && y-175<100){
+                            eat = true;
                         }
                 }
 
