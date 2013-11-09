@@ -1,13 +1,13 @@
 package com.example.soupfortim;
 
 import android.app.Activity;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -15,11 +15,7 @@ public class MainActivity extends Activity {
     static int y =0;
     int wh;
     int ww;
-
-    DrawingPanel drawingPanel;
-    Canvas canvas;
-
-
+    int points = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +48,14 @@ public class MainActivity extends Activity {
 
                         lp.setMargins(x-50 , y-175,0,0);
                         spoon.setLayoutParams(lp);
+
+                        if (150<x-150 && x-150<300 && 400<y-175 && y-175<500) {
+                            points = points + 10;
+                            Toast.makeText(getApplicationContext(), "Eat the soup, Tim! Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
+                            lp.setMargins(10,10,0,0);
+                        }
                 }
+
 
                 return true;
 
