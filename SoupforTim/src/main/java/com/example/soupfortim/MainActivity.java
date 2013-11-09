@@ -47,29 +47,30 @@ public class MainActivity extends Activity {
                         Log.d(String.valueOf(x),"were moving");
                         Log.d(String.valueOf(y),"were moving");
 
-                        int h1t = wh/3;
+                        int mouthy = wh/3 - 100;
                         int h2t = wh/3 + wh/3;
                         int whalf = ww/2;
 
+                        int cursorx = x-50;
+                        int cursory = y-175;
 
-
-                        lp.setMargins(x-50 , y-175,0,0);
+                        lp.setMargins(cursorx , y-175,0,0);
                         spoon.setLayoutParams(lp);
 
-                        sop.setMargins(whalf, h2t,0,0);
-                        soup.setLayoutParams(sop);
-
-                        if (whalf-25<x-50 && x-50<whalf+25 && h1t-50<y-175 && y-175<h1t+50 && eat) {
+                        //when cursor position is in the area of tims mouth we get 10 points
+                        if (whalf-200<cursorx && cursorx<whalf-150 && mouthy-25<cursory && cursory<mouthy+25 && eat) {
                             points = points + 10;
                             Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             eat = false;
+                            spoon.setImageResource(R.drawable.spoon_icon);
                             break;
                         }
 
                         //REFILLING SOUP
-                        if (whalf-50<x-50 && x-50<whalf+50 && h2t-50<y-175 && y-175<h2t+50){
+                        if (whalf-25<cursorx && cursorx<whalf+25 && h2t-50<cursory && cursory<h2t+50){
                             eat = true;
-                            Toast.makeText(getApplicationContext(), "Eat the soup, Tim!", Toast.LENGTH_SHORT).show();
+                            spoon.setImageResource(R.drawable.ic_launcher);
+                            //Toast.makeText(getApplicationContext(), "Eat the soup, Tim!", Toast.LENGTH_SHORT).show();
                         }
                 }
 
