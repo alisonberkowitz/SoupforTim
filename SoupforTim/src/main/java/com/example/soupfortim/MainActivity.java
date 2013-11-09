@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -33,6 +34,8 @@ public class MainActivity extends Activity {
         final RelativeLayout.LayoutParams sop = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         final ImageView soup = (ImageView) this.findViewById(R.id.soup);
         final ImageView spoon = (ImageView) this.findViewById(R.id.spoon);
+        final TextView pointcount = (TextView)this.findViewById(R.id.points);
+
         spoon.setImageResource(R.drawable.fullspoon);
         spoon.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -60,11 +63,12 @@ public class MainActivity extends Activity {
                         //when cursor position is in the area of tims mouth we get 10 points
                         if (whalf+120<cursorx && cursorx<whalf+200 && mouthy-50<cursory && cursory<mouthy+50 && eat) {
                             points = points + 10;
-                            Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             Log.d((String.valueOf(whalf+100) + " to " + String.valueOf(whalf+200)),"the soup box");
-                            Log.d((String.valueOf(mouthy-50) + " to " + String.valueOf(mouthy+50)),"the soup box");
+                            Log.d((String.valueOf(mouthy - 50) + " to " + String.valueOf(mouthy + 50)), "the soup box");
                             eat = false;
                             spoon.setImageResource(R.drawable.spoon_icon);
+                            pointcount.setText("Points = "+ String.valueOf(points));
                             break;
                         }
 
