@@ -12,8 +12,8 @@ import android.graphics.Canvas;
 
 public class MainActivity extends Activity {
 
-    static float x = 0;
-    static float y =0;
+    static float x ;
+    static float y ;
 
     DrawingPanel drawingPanel;
     Canvas canvas;
@@ -35,7 +35,6 @@ public class MainActivity extends Activity {
                     y = motionEvent.getY();
                     Log.d(String.valueOf(x), "we touched the screen");
                     drawingPanel.postInvalidate();
-                    drawingPanel.onDraw(canvas);
                     return true;
                 }
                 if (motionEvent.getAction() == motionEvent.ACTION_MOVE){
@@ -43,7 +42,6 @@ public class MainActivity extends Activity {
                     y = motionEvent.getY();
                     Log.d(String.valueOf(x),"were moving");
                     drawingPanel.postInvalidate();
-                    drawingPanel.onDraw(canvas);
                     return true;
                 }
                 drawingPanel.postInvalidate();
