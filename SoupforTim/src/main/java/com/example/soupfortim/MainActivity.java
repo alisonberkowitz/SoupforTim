@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         final RelativeLayout.LayoutParams sop = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         final ImageView soup = (ImageView) this.findViewById(R.id.soup);
         final ImageView spoon = (ImageView) this.findViewById(R.id.spoon);
-        spoon.setImageResource(R.drawable.spoon_icon);
+        spoon.setImageResource(R.drawable.fullspoon);
         spoon.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -47,9 +47,9 @@ public class MainActivity extends Activity {
                         Log.d(String.valueOf(x),"were moving");
                         Log.d(String.valueOf(y),"were moving");
 
-                        int mouthy = wh/3 - 90;
-                        int h2t = wh/3 + wh/3;
-                        int whalf = ww/2;
+                        int mouthy = wh/3 - 150;
+                        int h2t = wh/3 +300;
+                        int whalf = ww/2 + 75;
 
                         int cursorx = x-175;
                         int cursory = y-175;
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
                         spoon.setLayoutParams(lp);
 
                         //when cursor position is in the area of tims mouth we get 10 points
-                        if (whalf+120<cursorx && cursorx<whalf+200 && mouthy<cursory && cursory<mouthy+100 && eat) {
+                        if (whalf-200<cursorx && cursorx<whalf && mouthy<cursory && cursory<mouthy+80 && eat) {
                             points = points + 10;
                             Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             Log.d((String.valueOf(whalf+100) + " to " + String.valueOf(whalf+200)),"the soup box");
@@ -69,11 +69,11 @@ public class MainActivity extends Activity {
                         }
 
                         //REFILLING SOUP
-                        if (whalf-25<cursorx && cursorx<whalf+25 && h2t-50<cursory && cursory<h2t+50){
+                        if (whalf-150<cursorx && cursorx<whalf+50 && h2t-50<cursory && cursory<h2t){
                             eat = true;
                             Log.d((String.valueOf(whalf-25) + " to " + String.valueOf(whalf+25)),"the soup box");
                             Log.d((String.valueOf(h2t-50) + " to " + String.valueOf(h2t+50)),"the soup box");
-                            spoon.setImageResource(R.drawable.ic_launcher);
+                            spoon.setImageResource(R.drawable.fullspoon);
                             //Toast.makeText(getApplicationContext(), "Eat the soup, Tim!", Toast.LENGTH_SHORT).show();
                         }
                 }
