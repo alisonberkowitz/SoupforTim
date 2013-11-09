@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
         final RelativeLayout.LayoutParams sop = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         final ImageView soup = (ImageView) this.findViewById(R.id.soup);
         final ImageView spoon = (ImageView) this.findViewById(R.id.spoon);
-        spoon.setImageResource(R.drawable.spoon_icon);
+        spoon.setImageResource(R.drawable.fullspoon);
         spoon.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
                             eat = true;
                             Log.d((String.valueOf(whalf-25) + " to " + String.valueOf(whalf+25)),"the soup box");
                             Log.d((String.valueOf(h2t-50) + " to " + String.valueOf(h2t+50)),"the soup box");
-                            spoon.setImageResource(R.drawable.ic_launcher);
+                            spoon.setImageResource(R.drawable.fullspoon);
                             //Toast.makeText(getApplicationContext(), "Eat the soup, Tim!", Toast.LENGTH_SHORT).show();
                         }
                 }
