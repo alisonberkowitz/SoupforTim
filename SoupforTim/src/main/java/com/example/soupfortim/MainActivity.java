@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
                         Log.d(String.valueOf(x),"were moving");
                         Log.d(String.valueOf(y),"were moving");
 
-                        int mouthy = wh/3 - 100;
+                        int mouthy = wh/3 - 90;
                         int h2t = wh/3 + wh/3;
                         int whalf = ww/2;
 
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
                         spoon.setLayoutParams(lp);
 
                         //when cursor position is in the area of tims mouth we get 10 points
-                        if (whalf+120<cursorx && cursorx<whalf+200 && mouthy-50<cursory && cursory<mouthy+50 && eat) {
+                        if (whalf+120<cursorx && cursorx<whalf+200 && mouthy<cursory && cursory<mouthy+100 && eat) {
                             points = points + 10;
                             Toast.makeText(getApplicationContext(), "Points = " + String.valueOf(points), Toast.LENGTH_SHORT).show();
                             Log.d((String.valueOf(whalf+100) + " to " + String.valueOf(whalf+200)),"the soup box");
